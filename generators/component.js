@@ -1,17 +1,25 @@
+#!/usr/bin/env node
 const argv = require('yargs').argv;
 const writeFile = require('write');
+const chalk = require('chalk');
+const figlet = require('figlet');
 
-if (!argv.directory) {
-  var componentArgument = process.cwd();
-} else {
-  var componentArgument = argv.directory.lastIndexOf('/');
-  var result = argv.directory.substring(componentArgument + 1);
+function doSomeStuff() {
+  if (!argv.directory) {
+    console.log(chalk.red.bold('You have to define a directory first. ') + 
+                chalk.green('Example: src/app/components/myComponent'));
+    // process.exit();
+  } else {
+    var componentArgument = argv.directory.lastIndexOf('/');
+    var result = argv.directory.substring(componentArgument + 1);
+  }
 }
 
+figlet('Angular CLI Lite', function() {
+  doSomeStuff();
+});
 
-console.log(componentArgument, result);
-
-// writeFile(argv.directory + '/' + result + '.component.js', file.replaceEveryInstance(result), function(err) {
+// writeFile(argv.directory + '/' + result + '.component.js', 'This is content to write.', function(err) {
 //   if (err) console.log(err);
 // });
 

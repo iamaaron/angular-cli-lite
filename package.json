@@ -2,16 +2,25 @@
   "name": "angular-scaffold-generator",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "component": "node generators/component.js"
-  },
+  "preferGlobal": true,
   "author": "Aaron Brewer",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^1.1.3",
     "create-file": "^1.0.1",
+    "figlet": "^1.2.0",
     "write": "^0.3.3",
     "yargs": "^8.0.1"
+  },
+  "bin": {
+    "ngl-component": "./generators/component.js",
+    "ngl-service": "./generators/service.js",
+    "ngl-directive": "./generators/directive.js",
+    "ngl-pipe": "./generators/pipe.js",
+    "ngl-class": "./generators/class.js",
+    "ngl-guard": "./generators/guard.js",
+    "ngl-interface": "./generators/interface.js",
+    "ngl-enum": "./generators/enum.js",
+    "ngl-module": "./generators/module.js"
   }
 }
